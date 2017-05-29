@@ -31,25 +31,23 @@ class ViewController: UIViewController, EFImageViewZoomDelegate {
 
 ## Setup
 Optional, you can setup some properties of UIImageView
-![intructions](https://media.giphy.com/media/vEBdiijlgK8BW/giphy.gif)
 
 ```swift
+@IBInspectable public var image: UIImage! 
+@IBInspectable public var _minimumZoomScale: CGFloat = 1.0 
+@IBInspectable public var _maximumZoomScale: CGFloat = 6.0
 
-    @IBInspectable public var image: UIImage! 
-    @IBInspectable public var _minimumZoomScale: CGFloat = 1.0 
-    @IBInspectable public var _maximumZoomScale: CGFloat = 6.0
-    
-    public var highlightedImage: UIImage? = nil
-    public var isHighlighted: Bool = false 
-    public var animationImages: [UIImage]? = nil
-    public var highlightedAnimationImages: [UIImage]? = nil 
-    public var animationDuration: TimeInterval = TimeInterval()
-    public var animationRepeatCount: Int = 0 
-    override public var tintColor: UIColor! 
-    
-    public func startAnimating()
-    public func stopAnimating()
-    public var isAnimating: Bool
+public var highlightedImage: UIImage? = nil
+public var isHighlighted: Bool = false 
+public var animationImages: [UIImage]? = nil
+public var highlightedAnimationImages: [UIImage]? = nil 
+public var animationDuration: TimeInterval = TimeInterval()
+public var animationRepeatCount: Int = 0 
+override public var tintColor: UIColor! 
+
+public func startAnimating()
+public func stopAnimating()
+public var isAnimating: Bool
 ```
 
 ## Screenshots
