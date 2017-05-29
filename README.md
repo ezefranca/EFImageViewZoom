@@ -30,7 +30,7 @@ class ViewController: UIViewController, EFImageViewZoomDelegate {
 ```
 
 ## Setup
-Optional, you can setup some properties of UIImageView
+Optionally, you can set up some properties of UIImageView
 
 ```swift
 @IBInspectable public var image: UIImage! 
