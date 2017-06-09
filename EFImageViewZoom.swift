@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol EFImageViewZoomDelegate {
+public protocol EFImageViewZoomDelegate : class {
     func viewForZooming(zoomView: EFImageViewZoom) -> UIView?
 }
 
@@ -22,7 +22,7 @@ extension EFImageViewZoomDelegate {
 
 public class EFImageViewZoom: UIScrollView {
     
-    @IBInspectable public var _delegate: EFImageViewZoomDelegate?
+    @IBInspectable public weak var _delegate: EFImageViewZoomDelegate?
     fileprivate var imageView: UIImageView!
     fileprivate var cacheImage: UIImage!
     
@@ -48,11 +48,12 @@ public class EFImageViewZoom: UIScrollView {
         }
     }
     
-    public var contentModeImageView : UIViewContentMode = .center {
+    public var contentModeImageView : UIViewContentMode = .scaleAspectFit {
         didSet{
             self.contentMode = contentModeImageView
             self.sizeToFit()
             self.contentSize = self.imageView.intrinsicContentSize
+            self.imageView.contentMode = contentModeImageView
         }
     }
     
@@ -115,6 +116,8 @@ public class EFImageViewZoom: UIScrollView {
     override public func draw(_ rect: CGRect) {
         super.draw(rect)
         self.imageView = UIImageView(frame: rect)
+        self.imageView.contentMode = contentModeImageView
+        self.contentMode = contentModeImageView
         self.imageView.clipsToBounds = true
         self.addSubview(imageView)
         if let _cache = cacheImage {
@@ -129,4 +132,5 @@ extension EFImageViewZoom: UIScrollViewDelegate {
         return self._delegate?.viewForZooming(zoomView: scrollView as! EFImageViewZoom)
     }
 }
+
 
