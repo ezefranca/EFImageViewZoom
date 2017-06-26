@@ -1,4 +1,4 @@
-# EFImageViewZoom
+# EFImageViewZoom [![Swift Version][swift-image]][swift-url]
 A very simple IBDesignable ImageView with zoom
 
 ## Installation
