@@ -55,3 +55,7 @@ public var isAnimating: Bool
 
 ## License
 **EFImageViewZoom** is released under the MIT license. See the LICENSE file for more info.
+
+[swift-image]:https://img.shields.io/badge/swift-3.0-orange.svg
+[swift-url]: https://swift.org/
+[license-image]: https://img.shields.io/badge/License-MIT-blue.svg
