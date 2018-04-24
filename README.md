@@ -50,8 +50,13 @@ public func stopAnimating()
 public var isAnimating: Bool
 ```
 
-## Screenshots
-![Demo](https://media.giphy.com/media/23yu4cpEF0Dzq/giphy.gif)
+## Demo
+
+![Demo](https://media.giphy.com/media/1zJCGUbqGzJJerkokL/giphy.gif)
+
+## Thanks
+
+Double tap to restore suggestion [@avilarenan](https://github.com/avilarenan)
 
 ## License
 **EFImageViewZoom** is released under the MIT license. See the LICENSE file for more info.
