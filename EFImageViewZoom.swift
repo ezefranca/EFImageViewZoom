@@ -18,11 +18,18 @@ extension EFImageViewZoomDelegate {
     }
 }
 
+private extension UIScrollView {
+    func hideIndicators() {
+        showsHorizontalScrollIndicator = false
+        showsVerticalScrollIndicator = false
+    }
+}
+
 @IBDesignable
 
 public class EFImageViewZoom: UIScrollView {
     
-    @IBInspectable public weak var _delegate: EFImageViewZoomDelegate?
+    public weak var _delegate: EFImageViewZoomDelegate?
     fileprivate var imageView: UIImageView!
     fileprivate var cacheImage: UIImage!
     
@@ -123,7 +130,19 @@ public class EFImageViewZoom: UIScrollView {
         if let _cache = cacheImage {
             self.imageView.image = _cache
         }
+        self.hideIndicators()
+        self.setupTap()
         self.delegate = self
+    }
+    
+    private func setupTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        tap.numberOfTapsRequired = 2
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc func doubleTapped() {
+        self.setZoomScale(1.0, animated: true)
     }
 }
 
