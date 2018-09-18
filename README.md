@@ -2,7 +2,18 @@
 A very simple IBDesignable ImageView with zoom
 
 ## Installation
+
 Just drag `EFImageViewZoom.swift` to your project.
+
+
+#### CocoaPods
+
+You can use [CocoaPods](http://cocoapods.org/) to install `EFImageViewZoom` by adding it to your `Podfile`:
+
+```ruby
+use_frameworks!
+pod 'EFImageViewZoom', :git => 'https://github.com/ezefranca/EFImageViewZoom.git'
+```
 
 ## How to use
 Just set an UIView in your Storyboard to `EFImageViewZoom` type.
