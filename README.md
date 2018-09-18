@@ -61,6 +61,6 @@ Double tap to restore suggestion [@avilarenan](https://github.com/avilarenan)
 ## License
 **EFImageViewZoom** is released under the MIT license. See the LICENSE file for more info.
 
-[swift-image]:https://img.shields.io/badge/swift-3.0-orange.svg
+[swift-image]:https://img.shields.io/badge/swift-4.2-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
