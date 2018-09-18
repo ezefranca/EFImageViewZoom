@@ -120,9 +120,8 @@ public class EFImageViewZoom: UIScrollView {
         }
     }
     
-    override public func draw(_ rect: CGRect) {
-        super.draw(rect)
-        self.imageView = UIImageView(frame: rect)
+    public override func awakeFromNib() {
+        self.imageView = UIImageView(frame: self.frame)
         self.imageView.contentMode = contentModeImageView
         self.contentMode = contentModeImageView
         self.imageView.clipsToBounds = true
@@ -133,6 +132,10 @@ public class EFImageViewZoom: UIScrollView {
         self.hideIndicators()
         self.setupTap()
         self.delegate = self
+    }
+    
+    override public func draw(_ rect: CGRect) {
+        super.draw(rect)
     }
     
     private func setupTap() {
