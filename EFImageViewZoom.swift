@@ -12,7 +12,7 @@ public protocol EFImageViewZoomDelegate : class {
     func viewForZooming(zoomView: EFImageViewZoom) -> UIView?
 }
 
-extension EFImageViewZoomDelegate {
+public extension EFImageViewZoomDelegate {
     func viewForZooming(zoomView: EFImageViewZoom) -> UIView? {
         return zoomView.imageView
     }
