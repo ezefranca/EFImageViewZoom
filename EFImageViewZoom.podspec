@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EFImageViewZoom'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'A very simple IBDesignable UIImageView with pinch zoom swift.'
 
   s.description      = <<-DESC
