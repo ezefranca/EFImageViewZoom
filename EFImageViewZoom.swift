@@ -30,7 +30,7 @@ private extension UIScrollView {
 public class EFImageViewZoom: UIScrollView {
     
     public weak var _delegate: EFImageViewZoomDelegate?
-    fileprivate var imageView: UIImageView!
+    fileprivate (set) public var imageView: UIImageView!
     fileprivate var cacheImage: UIImage!
     
     @IBInspectable public var image: UIImage! {
