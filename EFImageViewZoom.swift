@@ -132,10 +132,16 @@ public class EFImageViewZoom: UIScrollView {
         self.hideIndicators()
         self.setupTap()
         self.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(screenOrientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     override public func draw(_ rect: CGRect) {
+        self.imageView.frame = rect
         super.draw(rect)
+    }
+    
+    @objc private func screenOrientationChanged() {
+        draw(self.frame)
     }
     
     private func setupTap() {
