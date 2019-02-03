@@ -121,7 +121,8 @@ public class EFImageViewZoom: UIScrollView {
     }
     
     public override func awakeFromNib() {
-        self.imageView = UIImageView(frame: self.frame)
+		self.imageView = UIImageView(frame: self.bounds)
+		self.imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.imageView.contentMode = contentModeImageView
         self.contentMode = contentModeImageView
         self.imageView.clipsToBounds = true
